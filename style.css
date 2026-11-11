@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Cynatar";
+  src: url("assets/fonts/Cynatar.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --ink: #05070d;
+  --night: #0b1330;
+  --dusk: #141f52;
+  --blue: #024ff6;
+  --cyan: #27e7ff;
+  --paper: #f2f4f8;
+  --mist: #aab4d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Noto Sans", system-ui, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#wrap {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The game keeps its own 706 x 720 shape and fills the screen as far as it can. */
+#stage {
+  position: relative;
+  width: min(100vw, calc(100svh * 706 / 720));
+  aspect-ratio: 706 / 720;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  background: var(--ink);
+}
+
+#mute {
+  position: absolute;
+  top: 2.2%;
+  right: 2.4%;
+  width: clamp(28px, 5.2%, 36px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  background: rgb(5 7 13 / 0.6);
+  color: var(--paper);
+  cursor: pointer;
+}
+#mute:hover {
+  background: var(--blue);
+}
+#mute:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+#mute[aria-pressed="true"] #mute-waves {
+  display: none;
+}
+#mute[aria-pressed="false"] #mute-cross {
+  display: none;
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#05070d" />
+  <title>Cashy Bubbles</title>
+  <meta name="description" content="Cashy fires coins at the board. Match three to pop them. Don't let them reach the street." />
+  <link rel="icon" href="assets/cashy.webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="wrap">
+    <div id="stage">
+      <canvas id="game" width="706" height="720" aria-label="Cashy Bubbles, a game where Cashy fires coins to match three of a colour" role="img"></canvas>
+      <button id="mute" type="button" aria-label="Sound on" aria-pressed="false" title="Sound (M)">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />
+          <g id="mute-waves" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M16 9c1.3 1.6 1.3 4.4 0 6" />
+            <path d="M18.5 6.5c2.6 3.2 2.6 7.8 0 11" />
+          </g>
+          <path id="mute-cross" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <noscript>Cashy Bubbles needs JavaScript to run.</noscript>
+  <script src="grid.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
